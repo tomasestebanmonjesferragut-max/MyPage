@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zommy | Portafolio Creativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <header>
+        <div class="logo-container">
+            <img src="zlogo.jpg" alt="Logo" class="logo">
+        </div>
+        <nav class="nav-menu">
+            <a href="#home">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#habilidades">Skills</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section class="hero" id="home">
+            <h1>Hola, soy <span style="color: var(--primary)">Zommy</span></h1>
+            <p>Especialista en <span id="typewriter" class="typewriter"></span></p>
+            
+            <a href="#inicio" class="scroll-indicator">
+                <span>Explorar</span>
+                <div class="mouse-wheel">
+                    <div class="wheel"></div>
+                </div>
+            </a>
+        </section>
+
+        <section class="intro-section" id="inicio">
+            <div class="intro-card">
+                <div class="icon-box"><i class="fas fa-code-branch"></i></div>
+                <h2>Lo que hago</h2>
+                <p>Mi labor consiste en fusionar el diseño digital con la fotografía técnica para dar forma a piezas visuales que transmitan dinamismo y originalidad. Este trabajo no solo me apasiona y me divierte, sino que también representa un desafío constante que me impulsa a superarme y a explorar nuevas posibilidades creativas. Desde la ilustración hasta el desarrollo web moderno, cada proyecto es una oportunidad para experimentar con diferentes lenguajes visuales y expandir mis competencias en el ámbito creativo y tecnológico.</p>
+            </div>
+            <div class="intro-card">
+                <div class="icon-box"><i class="fas fa-eye"></i></div>
+                <h2>Mi Enfoque</h2>
+                <p>Más allá de capturar imágenes, mi propósito es capturar intenciones, emociones y narrativas que otorguen profundidad a cada obra. Busco ampliar continuamente mis conocimientos y habilidades, comprendiendo cada aspecto que implica el proceso creativo y técnico, con el objetivo de alcanzar un nivel de excelencia profesional. Cada pieza en este portafolio refleja un paso más en la construcción de un estilo visual propio, disruptivo y en constante evolución, que combina sensibilidad artística con rigor técnico.</p>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2 class="section-title">Mi <span>Portafolio</span></h2>
+            <div class="filter-wrapper">
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all"><i class="fas fa-star"></i> Destacados</button>
+                    <button class="filter-btn" data-filter="diseno">Diseño Digital</button>
+                    <button class="filter-btn" data-filter="dibujo">Dibujos</button>
+                    <button class="filter-btn" data-filter="foto">Fotografía</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                </div>
+            </div>
+            <div class="project-grid" id="project-grid"></div>
+        </section>
+
+        <section class="skills-section" id="habilidades">
+            <h2 class="section-title">Habilidades <span>Pro</span></h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-info"><span>Ilustración Art</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Fotografía </span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Diseño digital y multimedia</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Diseño y desarrollo web</span><span>60%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <h3>¿Hablamos?</h3>
+            <p>Escríbeme para proyectos o simplemente para conectar.</p>
+            
+            <div class="social-grid">
+                <a href="https://www.instagram.com/zommy._m/" target="_blank" class="social-card">
+                    <i class="fab fa-instagram"></i>
+                    <span>@zommy._m</span>
+                    <small>Perfil Personal</small>
+                </a>
+                <a href="https://www.instagram.com/zetac.r" target="_blank" class="social-card">
+                    <i class="fas fa-camera-retro"></i>
+                    <span>@zetac.r</span>
+                    <small>Fotografía</small>
+                </a>
+                <a href="mailto:tomasmonjes.f@gmail.com" class="social-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>Correo</span>
+                    <small>Email Oficial</small>
+                </a>
+            </div>
+            <div class="copyright">&copy; 2026 Zommy Portafolio.</div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="fullImg">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // --- 1. CONFIGURACIÓN DE GALERÍA ORIGINAL ---
+        const maxIntentos = 40; 
+        const categorias = [
+            { id: 'diseno', carpeta: 'diseñoDigital_', ext: '.jpg', titulo: 'Diseño' },
+            { id: 'dibujo', carpeta: 'dibujos_',      ext: '.JPG', titulo: 'Arte' },
+            { id: 'foto',   carpeta: 'fotos_',        ext: '.jpg', titulo: 'Foto' },
+            { id: 'web',    carpeta: 'web_',          ext: '.jpg', titulo: 'Web' }
+        ];
+
+        const grid = document.getElementById('project-grid');
+
+        function generarGaleria() {
+            grid.innerHTML = ""; 
+            categorias.forEach(cat => {
+                for (let i = 1; i <= maxIntentos; i++) {
+                    const esPortada = (i === 1) ? 'is-cover' : '';
+                    const cardHTML = `
+                        <div class="card gallery-item ${esPortada}" data-category="${cat.id}">
+                            <div class="img-wrapper">
+                                <img src="${cat.carpeta}/${i}${cat.ext}" alt="${cat.titulo} #${i}" class="expandable" onerror="this.closest('.card').remove()"> 
+                            </div>
+                            <div class="card-content"><h3>${cat.titulo} ${i}</h3></div>
+                        </div>`;
+                    grid.innerHTML += cardHTML;
+                }
+            });
+            setTimeout(configurarLightbox, 500);
+            setTimeout(() => { document.querySelector('.filter-btn[data-filter="all"]').click(); }, 100);
+        }
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const val = button.getAttribute('data-filter');
+                document.querySelectorAll('.card').forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (val === 'all') {
+                        card.style.display = card.classList.contains('is-cover') ? 'block' : 'none';
+                    } else {
+                        card.style.display = (category === val) ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+
+        function configurarLightbox() {
+            const modal = document.getElementById("lightbox");
+            const modalImg = document.getElementById("fullImg");
+            document.querySelectorAll('.expandable').forEach(img => {
+                img.onclick = () => {
+                    modal.style.display = "flex";
+                    modalImg.src = img.src;
+                    document.getElementById("caption").innerHTML = img.alt;
+                }
+            });
+            document.querySelector('.close-modal').onclick = () => modal.style.display = "none";
+        }
+
+        // --- 2. NUEVA FUNCIÓN: TYPEWRITER ---
+        const textElement = document.getElementById('typewriter');
+        const words = ["Diseño Digital", "Fotografía Técnica", "Ilustración Art", "Desarrollo Web"];
+        let wordIdx = 0, charIdx = 0, isDeleting = false;
+
+        function typeEffect() {
+            const currentWord = words[wordIdx];
+            textElement.textContent = isDeleting ? currentWord.substring(0, charIdx - 1) : currentWord.substring(0, charIdx + 1);
+            charIdx = isDeleting ? charIdx - 1 : charIdx + 1;
+
+            let speed = isDeleting ? 50 : 150;
+            if (!isDeleting && charIdx === currentWord.length) { isDeleting = true; speed = 2000; }
+            else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % words.length; speed = 500; }
+            setTimeout(typeEffect, speed);
+        }
+
+        // --- 3. NUEVA FUNCIÓN: MOUSE GLOW ---
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            document.querySelector('.bg-glow').style.background = `
+                radial-gradient(circle at ${x}% ${y}%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 95% 95%, rgba(129, 140, 248, 0.08) 0%, transparent 40%)`;
+        });
+
+        generarGaleria();
+        typeEffect();
+    </script>
+</body>
+</html>

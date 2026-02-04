@@ -16,6 +16,12 @@
         <div class="logo-container">
             <img src="zlogo.jpg" alt="Logo" class="logo">
         </div>
+        
+        <input type="checkbox" id="menu-check">
+        <label for="menu-check" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+
         <nav class="nav-menu">
             <a href="#home">Inicio</a>
             <a href="#proyectos">Proyectos</a>
@@ -122,7 +128,7 @@
     </div>
 
     <script>
-        // --- 1. CONFIGURACIÓN DE GALERÍA ORIGINAL ---
+        // --- 1. CONFIGURACIÓN DE GALERÍA ---
         const maxIntentos = 40; 
         const categorias = [
             { id: 'diseno', carpeta: 'diseñoDigital_', ext: '.jpg', titulo: 'Diseño' },
@@ -182,7 +188,7 @@
             document.querySelector('.close-modal').onclick = () => modal.style.display = "none";
         }
 
-        // --- 2. NUEVA FUNCIÓN: TYPEWRITER ---
+        // --- 2. TYPEWRITER ---
         const textElement = document.getElementById('typewriter');
         const words = ["Diseño Digital", "Fotografía Técnica", "Ilustración Art", "Desarrollo Web"];
         let wordIdx = 0, charIdx = 0, isDeleting = false;
@@ -198,13 +204,23 @@
             setTimeout(typeEffect, speed);
         }
 
-        // --- 3. NUEVA FUNCIÓN: MOUSE GLOW ---
+        // --- 3. MOUSE GLOW ---
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
-            document.querySelector('.bg-glow').style.background = `
-                radial-gradient(circle at ${x}% ${y}%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 95% 95%, rgba(129, 140, 248, 0.08) 0%, transparent 40%)`;
+            const glow = document.querySelector('.bg-glow');
+            if(glow) {
+                glow.style.background = `
+                    radial-gradient(circle at ${x}% ${y}%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                    radial-gradient(circle at 95% 95%, rgba(129, 140, 248, 0.08) 0%, transparent 40%)`;
+            }
+        });
+
+        // --- 4. CERRAR MENÚ MÓVIL AL CLICK ---
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-check').checked = false;
+            });
         });
 
         generarGaleria();

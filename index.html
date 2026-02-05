@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Zommy | Portafolio Creativo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -62,9 +62,9 @@
             <div class="filter-wrapper">
                 <div class="filter-container">
                     <button class="filter-btn active" data-filter="all"><i class="fas fa-star"></i> Destacados</button>
-                    <button class="filter-btn" data-filter="diseno">Diseño Digital</button>
-                    <button class="filter-btn" data-filter="dibujo">Dibujos</button>
-                    <button class="filter-btn" data-filter="foto">Fotografía</button>
+                    <button class="filter-btn" data-filter="diseno">Diseño</button>
+                    <button class="filter-btn" data-filter="dibujo">Arte</button>
+                    <button class="filter-btn" data-filter="foto">Foto</button>
                     <button class="filter-btn" data-filter="web">Web</button>
                 </div>
             </div>
@@ -83,11 +83,11 @@
                     <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info"><span>Diseño digital y multimedia</span><span>70%</span></div>
+                    <div class="skill-info"><span>Diseño digital</span><span>70%</span></div>
                     <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info"><span>Diseño y desarrollo web</span><span>60%</span></div>
+                    <div class="skill-info"><span>Desarrollo web</span><span>60%</span></div>
                     <div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div>
                 </div>
             </div>
@@ -98,26 +98,21 @@
     <footer id="contacto">
         <div class="footer-content">
             <h3>¿Hablamos?</h3>
-            <p>Escríbeme para proyectos o simplemente para conectar.</p>
-            
             <div class="social-grid">
                 <a href="https://www.instagram.com/zommy._m/" target="_blank" class="social-card">
                     <i class="fab fa-instagram"></i>
-                    <span>@zommy._m</span>
-                    <small>Perfil Personal</small>
+                    <span>Instagram</span>
                 </a>
                 <a href="https://www.instagram.com/zetac.r" target="_blank" class="social-card">
                     <i class="fas fa-camera-retro"></i>
-                    <span>@zetac.r</span>
-                    <small>Fotografía</small>
+                    <span>Fotografía</span>
                 </a>
                 <a href="mailto:tomasmonjes.f@gmail.com" class="social-card">
                     <i class="fas fa-envelope"></i>
                     <span>Correo</span>
-                    <small>Email Oficial</small>
                 </a>
             </div>
-            <div class="copyright">&copy; 2026 Zommy Portafolio.</div>
+            <div class="copyright">&copy; 2026 Zommy.</div>
         </div>
     </footer>
 
@@ -128,7 +123,6 @@
     </div>
 
     <script>
-        // --- 1. CONFIGURACIÓN DE GALERÍA ---
         const maxIntentos = 40; 
         const categorias = [
             { id: 'diseno', carpeta: 'diseñoDigital_', ext: '.jpg', titulo: 'Diseño' },
@@ -188,35 +182,20 @@
             document.querySelector('.close-modal').onclick = () => modal.style.display = "none";
         }
 
-        // --- 2. TYPEWRITER ---
         const textElement = document.getElementById('typewriter');
-        const words = ["Diseño Digital", "Fotografía Técnica", "Ilustración Art", "Desarrollo Web"];
+        const words = ["Diseño Digital", "Fotografía", "Arte", "Web"];
         let wordIdx = 0, charIdx = 0, isDeleting = false;
 
         function typeEffect() {
             const currentWord = words[wordIdx];
             textElement.textContent = isDeleting ? currentWord.substring(0, charIdx - 1) : currentWord.substring(0, charIdx + 1);
             charIdx = isDeleting ? charIdx - 1 : charIdx + 1;
-
             let speed = isDeleting ? 50 : 150;
             if (!isDeleting && charIdx === currentWord.length) { isDeleting = true; speed = 2000; }
             else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % words.length; speed = 500; }
             setTimeout(typeEffect, speed);
         }
 
-        // --- 3. MOUSE GLOW ---
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth) * 100;
-            const y = (e.clientY / window.innerHeight) * 100;
-            const glow = document.querySelector('.bg-glow');
-            if(glow) {
-                glow.style.background = `
-                    radial-gradient(circle at ${x}% ${y}%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
-                    radial-gradient(circle at 95% 95%, rgba(129, 140, 248, 0.08) 0%, transparent 40%)`;
-            }
-        });
-
-        // --- 4. CERRAR MENÚ MÓVIL AL CLICK ---
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('menu-check').checked = false;

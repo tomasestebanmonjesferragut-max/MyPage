@@ -76,6 +76,120 @@ footer { padding: 40px 0; border-top: var(--glass); text-align: center; margin-t
 .modal-content { max-width: 95%; max-height: 80vh; }
 .close-modal { position: absolute; top: 20px; right: 20px; font-size: 30px; color: #fff; cursor: pointer; }
 
+/* =========================================
+   NUEVA SECCIÓN: PROYECTOS WEB (APPS)
+========================================= */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 60px 0 30px;
+}
+.section-title span {
+    color: var(--primary);
+}
+
+.web-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.web-card {
+    background: var(--card);
+    padding: 40px 25px;
+    border-radius: 20px;
+    border: var(--glass);
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.web-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.web-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.web-card:hover::before {
+    opacity: 1;
+}
+
+.web-icon, .web-card h3, .web-card p, .web-btn {
+    position: relative;
+    z-index: 1;
+}
+
+.web-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.web-card:hover .web-icon {
+    transform: scale(1.1);
+}
+
+.web-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.web-card p {
+    color: var(--text-dim);
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* ESTILOS DE BOTONES NEON */
+.web-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: var(--text);
+    border: 2px solid;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+/* Colores personalizados por proyecto */
+.btn-pink { border-color: #ff66b2; color: #ff66b2; }
+.btn-pink:hover { background: #ff66b2; color: #000; box-shadow: 0 0 20px rgba(255, 102, 178, 0.6); }
+
+.btn-purple { border-color: #a855f7; color: #a855f7; }
+.btn-purple:hover { background: #a855f7; color: #fff; box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
+
+.btn-blue { border-color: var(--primary); color: var(--primary); }
+.btn-blue:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px rgba(56, 189, 248, 0.6); }
+
+/* Ajuste específico para la tarjeta GhostDev */
+.ghostdev-card:hover {
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
 /* AJUSTES ESPECÍFICOS PARA MÓVIL */
 @media (max-width: 768px) {
     .menu-btn { display: block; }

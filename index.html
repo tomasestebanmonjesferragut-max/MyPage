@@ -24,7 +24,8 @@
 
         <nav class="nav-menu">
             <a href="#home">Inicio</a>
-            <a href="#proyectos">Proyectos</a>
+            <a href="#proyectos-web">Apps Web</a>
+            <a href="#proyectos">Galería</a>
             <a href="#habilidades">Skills</a>
             <a href="#contacto">Contacto</a>
         </nav>
@@ -57,8 +58,36 @@
             </div>
         </section>
 
+        <section id="proyectos-web">
+            <h2 class="section-title">Apps <span>Web</span></h2>
+            <div class="web-projects-grid">
+                
+                <div class="web-card">
+                    <div class="web-icon" style="color: #ff66b2;"><i class="fas fa-calculator"></i></div>
+                    <h3>Calculadora Kawaii</h3>
+                    <p>Calculadora científica totalmente funcional destacando un diseño temático rosado con monitos kiut.</p>
+                    <a href="https://tomasestebanmonjesferragut-max.github.io/CalculadoraKawai/" target="_blank" class="web-btn btn-pink">Probar ahora</a>
+                </div>
+                
+                <div class="web-card ghostdev-card">
+                    <div class="web-icon" style="color: #a855f7;"><i class="fas fa-ghost"></i></div>
+                    <h3>Snake by GhostDev</h3>
+                    <p>El clásico juego de la serpiente reinventado con un estilo negro, toques violeta y tablas de clasificación.</p>
+                    <a href="https://tomasestebanmonjesferragut-max.github.io/Snake-GhostDev/" target="_blank" class="web-btn btn-purple">Jugar ahora</a>
+                </div>
+                
+                <div class="web-card">
+                    <div class="web-icon" style="color: var(--primary);"><i class="fas fa-camera-retro"></i></div>
+                    <h3>Galería Externa</h3>
+                    <p>Una visualización web independiente para explorar a fondo mis mejores capturas y arte digital.</p>
+                    <a href="https://tomasestebanmonjesferragut-max.github.io/Galeria/" target="_blank" class="web-btn btn-blue">Ver galería</a>
+                </div>
+
+            </div>
+        </section>
+
         <section id="proyectos">
-            <h2 class="section-title">Mi <span>Portafolio</span></h2>
+            <h2 class="section-title">Mi <span>Galería</span></h2>
             <div class="filter-wrapper">
                 <div class="filter-container">
                     <button class="filter-btn active" data-filter="all"><i class="fas fa-star"></i> Destacados</button>
@@ -75,19 +104,19 @@
             <h2 class="section-title">Habilidades <span>Pro</span></h2>
             <div class="skills-container">
                 <div class="skill-item">
-                    <div class="skill-info"><span>Ilustración Art</span><span>90%</span></div>
+                    <div class="skill-info"><span>Ilustración Art </span><span>90%</span></div>
                     <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info"><span>Fotografía </span><span>80%</span></div>
+                    <div class="skill-info"><span>Fotografía  </span><span>80%</span></div>
                     <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info"><span>Diseño digital</span><span>70%</span></div>
+                    <div class="skill-info"><span>Diseño digital </span><span>70%</span></div>
                     <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info"><span>Desarrollo web</span><span>60%</span></div>
+                    <div class="skill-info"><span>Desarrollo web </span><span>60%</span></div>
                     <div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div>
                 </div>
             </div>
@@ -112,7 +141,7 @@
                     <span>Correo</span>
                 </a>
             </div>
-            <div class="copyright">&copy; 2026 Zommy.</div>
+            <div class="copyright">&copy; 2026 Zommy. Todos los derechos reservados.</div>
         </div>
     </footer>
 
@@ -123,6 +152,7 @@
     </div>
 
     <script>
+        // Lógica existente de la galería y efectos
         const maxIntentos = 40; 
         const categorias = [
             { id: 'diseno', carpeta: 'diseñoDigital_', ext: '.jpg', titulo: 'Diseño' },
@@ -158,7 +188,7 @@
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 const val = button.getAttribute('data-filter');
-                document.querySelectorAll('.card').forEach(card => {
+                document.querySelectorAll('.gallery-item').forEach(card => {
                     const category = card.getAttribute('data-category');
                     if (val === 'all') {
                         card.style.display = card.classList.contains('is-cover') ? 'block' : 'none';
@@ -183,7 +213,7 @@
         }
 
         const textElement = document.getElementById('typewriter');
-        const words = ["Diseño Digital", "Fotografía", "Arte", "Web"];
+        const words = ["Diseño Digital", "Fotografía", "Arte", "Programación Web"];
         let wordIdx = 0, charIdx = 0, isDeleting = false;
 
         function typeEffect() {

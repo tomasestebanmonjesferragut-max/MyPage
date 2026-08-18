@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Zommy | Portafolio Creativo</title>
+    <title>Tommy Monjes | Zommy — Portafolio Creativo</title>
+    <meta name="description" content="Portafolio de Tommy Monjes (Zommy): diseño digital, fotografía, ilustración y desarrollo web. Explora proyectos, galería y apps web.">
+    <meta name="author" content="Tommy Monjes">
+    <meta property="og:title" content="Tommy Monjes | Zommy — Portafolio Creativo">
+    <meta property="og:description" content="Diseño digital, fotografía, ilustración y desarrollo web. Explora mis proyectos y galería.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="zlogo.jpg">
+    <link rel="icon" type="image/jpeg" href="zlogo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -34,9 +41,15 @@
     <div class="container">
         
         <section class="hero" id="home">
-            <h1>Hola, soy <span style="color: var(--primary)">Zommy</span></h1>
+            <span class="hero-alias">Zommy</span>
+            <h1>Tommy <span style="color: var(--primary)">Monjes</span></h1>
             <p>Especialista en <span id="typewriter" class="typewriter"></span></p>
-            
+
+            <div class="hero-cta">
+                <a href="#proyectos-web" class="btn-primary">Ver proyectos</a>
+                <a href="#contacto" class="btn-outline">Hablemos</a>
+            </div>
+
             <a href="#inicio" class="scroll-indicator">
                 <span>Explorar</span>
                 <div class="mouse-wheel">
@@ -45,41 +58,65 @@
             </a>
         </section>
 
-        <section class="intro-section" id="inicio">
-            <div class="intro-card">
-                <div class="icon-box"><i class="fas fa-code-branch"></i></div>
-                <h2>Lo que hago</h2>
-                <p>Mi labor consiste en fusionar el diseño digital con la fotografía técnica para dar forma a piezas visuales que transmitan dinamismo y originalidad. Este trabajo no solo me apasiona y me divierte, sino que también representa un desafío constante que me impulsa a superarme y a explorar nuevas posibilidades creativas. Desde la ilustración hasta el desarrollo web moderno, cada proyecto es una oportunidad para experimentar con diferentes lenguajes visuales y expandir mis competencias en el ámbito creativo y tecnológico.</p>
+        <section class="about-section reveal" id="inicio">
+            <div class="about-visual">
+                <div class="about-avatar">
+                    <img src="zlogo.jpg" alt="Tommy Monjes - Zommy">
+                </div>
+                <div class="about-badges">
+                    <span class="badge-pill"><i class="fas fa-pen-nib"></i> Ilustración</span>
+                    <span class="badge-pill"><i class="fas fa-camera-retro"></i> Fotografía</span>
+                    <span class="badge-pill"><i class="fas fa-swatchbook"></i> Diseño digital</span>
+                    <span class="badge-pill"><i class="fas fa-code"></i> Desarrollo web</span>
+                </div>
             </div>
-            <div class="intro-card">
-                <div class="icon-box"><i class="fas fa-eye"></i></div>
-                <h2>Mi Enfoque</h2>
-                <p>Más allá de capturar imágenes, mi propósito es capturar intenciones, emociones y narrativas que otorguen profundidad a cada obra. Busco ampliar continuamente mis conocimientos y habilidades, comprendiendo cada aspecto que implica el proceso creativo y técnico, con el objetivo de alcanzar un nivel de excelencia profesional. Cada pieza en este portafolio refleja un paso más en la construcción de un estilo visual propio, disruptivo y en constante evolución, que combina sensibilidad artística con rigor técnico.</p>
+            <div class="about-text">
+                <span class="eyebrow">Sobre mí</span>
+                <h2>Diseño, fotografío y programo con la misma pasión</h2>
+                <p>Mi labor consiste en fusionar el diseño digital con la fotografía técnica para dar forma a piezas visuales que transmitan dinamismo y originalidad. Es un desafío constante que me impulsa a superarme y a explorar nuevas posibilidades creativas, desde la ilustración hasta el desarrollo web moderno.</p>
+                <p>Más allá de capturar imágenes, mi propósito es capturar intenciones, emociones y narrativas que otorguen profundidad a cada obra. Cada pieza de este portafolio refleja un paso más en la construcción de un estilo visual propio, disruptivo y en constante evolución, que combina sensibilidad artística con rigor técnico.</p>
+                <div class="about-cta">
+                    <a href="#proyectos" class="btn-outline btn-sm">Ver galería</a>
+                    <a href="mailto:tomasmonjes.f@gmail.com" class="btn-outline btn-sm">Escribirme</a>
+                </div>
             </div>
         </section>
 
         <section id="proyectos-web">
-            <h2 class="section-title">Apps <span>Web</span></h2>
+            <span class="eyebrow eyebrow-center reveal">Portafolio</span>
+            <h2 class="section-title reveal">Apps <span>Web</span></h2>
             <div class="web-projects-grid">
-                
-                <div class="web-card">
+
+                <div class="web-card reveal">
                     <div class="web-icon" style="color: #ff66b2;"><i class="fas fa-calculator"></i></div>
                     <h3>Calculadora Kawaii</h3>
                     <p>Calculadora científica totalmente funcional destacando un diseño temático rosado con monitos kiut.</p>
+                    <div class="tag-row">
+                        <span class="tag">HTML/CSS/JS</span>
+                        <span class="tag">Proyecto personal</span>
+                    </div>
                     <a href="https://tomasestebanmonjesferragut-max.github.io/CalculadoraKawai/" target="_blank" class="web-btn btn-pink">Probar ahora</a>
                 </div>
-                
-                <div class="web-card ghostdev-card">
+
+                <div class="web-card ghostdev-card reveal">
                     <div class="web-icon" style="color: #a855f7;"><i class="fas fa-ghost"></i></div>
                     <h3>Snake by GhostDev</h3>
                     <p>El clásico juego de la serpiente reinventado con un estilo negro, toques violeta y tablas de clasificación.</p>
+                    <div class="tag-row">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Juego / Canvas</span>
+                    </div>
                     <a href="https://tomasestebanmonjesferragut-max.github.io/Snake-GhostDev/" target="_blank" class="web-btn btn-purple">Jugar ahora</a>
                 </div>
-                
-                <div class="web-card">
+
+                <div class="web-card reveal">
                     <div class="web-icon" style="color: var(--primary);"><i class="fas fa-camera-retro"></i></div>
                     <h3>Galería Externa</h3>
                     <p>Una visualización web independiente para explorar a fondo mis mejores capturas y arte digital.</p>
+                    <div class="tag-row">
+                        <span class="tag">HTML/CSS/JS</span>
+                        <span class="tag">Galería</span>
+                    </div>
                     <a href="https://tomasestebanmonjesferragut-max.github.io/Galeria/" target="_blank" class="web-btn btn-blue">Ver galería</a>
                 </div>
 
@@ -87,7 +124,8 @@
         </section>
 
         <section id="proyectos">
-            <h2 class="section-title">Mi <span>Galería</span></h2>
+            <span class="eyebrow eyebrow-center reveal">Trabajo visual</span>
+            <h2 class="section-title reveal">Mi <span>Galería</span></h2>
             <div class="filter-wrapper">
                 <div class="filter-container">
                     <button class="filter-btn active" data-filter="all"><i class="fas fa-star"></i> Destacados</button>
@@ -100,24 +138,25 @@
             <div class="project-grid" id="project-grid"></div>
         </section>
 
-        <section class="skills-section" id="habilidades">
+        <section class="skills-section reveal" id="habilidades">
+            <span class="eyebrow eyebrow-center">Nivel</span>
             <h2 class="section-title">Habilidades <span>Pro</span></h2>
             <div class="skills-container">
                 <div class="skill-item">
                     <div class="skill-info"><span>Ilustración Art </span><span>90%</span></div>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-info"><span>Fotografía  </span><span>80%</span></div>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-info"><span>Diseño digital </span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-info"><span>Desarrollo web </span><span>60%</span></div>
-                    <div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="60%"></div></div>
                 </div>
             </div>
         </section>
@@ -126,24 +165,33 @@
 
     <footer id="contacto">
         <div class="footer-content">
-            <h3>¿Hablamos?</h3>
-            <div class="social-grid">
-                <a href="https://www.instagram.com/zommy._m/" target="_blank" class="social-card">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://www.instagram.com/zetac.r" target="_blank" class="social-card">
-                    <i class="fas fa-camera-retro"></i>
-                    <span>Fotografía</span>
-                </a>
-                <a href="mailto:tomasmonjes.f@gmail.com" class="social-card">
-                    <i class="fas fa-envelope"></i>
-                    <span>Correo</span>
-                </a>
+            <div class="footer-brand">
+                <img src="zlogo.jpg" alt="Logo" class="footer-logo">
+                <h3>Tommy Monjes</h3>
+                <p>Diseño digital, fotografía, ilustración y desarrollo web con identidad propia.</p>
             </div>
-            <div class="copyright">&copy; 2026 Zommy. Todos los derechos reservados.</div>
+            <div class="footer-cta">
+                <h4>¿Hablamos?</h4>
+                <div class="social-grid">
+                    <a href="https://www.instagram.com/zommy._m/" target="_blank" class="social-card">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/zetac.r" target="_blank" class="social-card">
+                        <i class="fas fa-camera-retro"></i>
+                        <span>Fotografía</span>
+                    </a>
+                    <a href="mailto:tomasmonjes.f@gmail.com" class="social-card">
+                        <i class="fas fa-envelope"></i>
+                        <span>Correo</span>
+                    </a>
+                </div>
+            </div>
         </div>
+        <div class="copyright">&copy; 2026 Tommy Monjes (Zommy). Todos los derechos reservados.</div>
     </footer>
+
+    <a href="#home" class="back-to-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
 
     <div id="lightbox" class="modal">
         <span class="close-modal">&times;</span>
@@ -171,7 +219,9 @@
                     const cardHTML = `
                         <div class="card gallery-item ${esPortada}" data-category="${cat.id}">
                             <div class="img-wrapper">
-                                <img src="${cat.carpeta}/${i}${cat.ext}" alt="${cat.titulo} #${i}" class="expandable" onerror="this.closest('.card').remove()"> 
+                                <img src="${cat.carpeta}/${i}${cat.ext}" alt="${cat.titulo} #${i}" class="expandable" onerror="this.closest('.card').remove()">
+                                <span class="card-badge">${cat.titulo}</span>
+                                <div class="card-overlay"><i class="fas fa-expand"></i> Ver</div>
                             </div>
                             <div class="card-content"><h3>${cat.titulo} ${i}</h3></div>
                         </div>`;
@@ -230,6 +280,50 @@
             link.addEventListener('click', () => {
                 document.getElementById('menu-check').checked = false;
             });
+        });
+
+        // Animación de aparición al hacer scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Barras de habilidades animadas al entrar en vista
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-progress').forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        const skillsSection = document.querySelector('.skills-section');
+        if (skillsSection) skillsObserver.observe(skillsSection);
+
+        // Resaltado del enlace activo en el menú según la sección visible
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = `#${entry.target.id}`;
+                    navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+        sections.forEach(section => navObserver.observe(section));
+
+        // Botón "volver arriba"
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
         });
 
         generarGaleria();
